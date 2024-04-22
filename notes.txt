@@ -1,0 +1,44 @@
+How to send python Backend data to front end file (HTML):
+--------------------------------------------------------
+
+step 1) create a project
+
+step 2) create a app
+
+step 3) create a view inside views.py file
+
+step 4) in view create a dictionary with key value pair
+
+step 5) view need to return render object as it contains
+
+		render(request,hmtlfile,context=dictionary)
+
+
+# Create your views here.
+
+def home(request):
+    d={'info':"Hello my name is JACK"}
+    return render(request,"home.html",context=d)
+
+
+
+step 6: create a html file inside the html file we need to acces backend data
+
+		{{key}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>  {{info}} </h1>
+</body>
+</html>
+
+
+step 7: connect app level urls with project level urls
